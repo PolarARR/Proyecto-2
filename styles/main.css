@@ -82,6 +82,50 @@ header img {
   background-color: #FF9900;
 }
 
+.pokemons {
+  box-sizing: border-box;
+  width: 85%;
+  margin: 90px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: #F5F5F5;
+  gap: 25px;
+  padding: 30px 15px 30px 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+.pokemons article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: black 2px solid;
+  width: 290px;
+  height: 320px;
+}
+.pokemons article img {
+  width: 80px;
+  height: 80px;
+  margin: 40px 0;
+}
+.pokemons article div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.pokemons article div span {
+  width: 90px;
+  border-radius: 50px;
+  padding: 5px 10px;
+  font-weight: 400;
+  background-color: #FFCC00;
+}
+
 section.teamConstructor {
   box-sizing: border-box;
   width: 50%;
@@ -91,7 +135,7 @@ section.teamConstructor {
   background-color: #F5F5F5;
   gap: 25px;
   padding: 30px 15px 30px 15px;
-  border: 4.5px solid #0075BE;
+  border: 6px solid #0075BE;
   border-radius: 10px;
 }
 section.teamConstructor article {
