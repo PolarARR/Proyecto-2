@@ -1,0 +1,36 @@
+$mainColor:#0075BE;
+$background:#F5F5F5;
+
+// ------------------------------   Functions   ------------------------------
+
+@function px-to-rem($px, $base: 16) {
+    @return ($px / $base) * 1rem;
+}
+
+// ------------------------------   Mixins  ------------------------------
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// ------------------------------   Extends    ------------------------------
+
+%containerHover {
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.2s ease-out;
+            cursor: pointer;
+        }
+    }
+}
+
+%containerActive {
+    &:active {
+        transform: scale(0.95);
+        transition: all 0.1s ease-out;
+    }
+}

@@ -1,0 +1,64 @@
+body {
+    font-family: "Bai Jamjuree", Arial, Helvetica, sans-serif;
+    font-size: px-to-rem(16);
+    font-weight: 300;
+    margin: 0;
+}
+
+header {
+    background-color: $mainColor;
+    color: #ffffff;
+    gap: 5px;
+    @include flex(row, center, center);
+    
+    img {
+        width: 50px;
+        height: 50px;
+        padding-top: 5px;
+    }
+}
+
+.search {
+    background-color: #F5F5F5;
+    height: 100px;
+    width: 100%;
+    @include flex(row, center, center);
+
+    input {
+        all: unset;
+        border-top: 3.5px $mainColor solid;
+        border-bottom: 3.5px $mainColor solid;
+        border-left: 3.5px $mainColor solid;
+        color: #333333;
+        background-color: #ffffff;
+        padding: 8px 12px;
+        border-radius: 7px 0 0 7px;
+        width: 25%;
+
+        &::placeholder {
+            color: #999999;
+        }
+    }
+
+    i {
+        height: 36px;
+        width: 36px;
+        background-color: #FFCC00;
+        border-radius: 0 7px 7px 0;
+        border-top: 3.5px $mainColor solid;
+        border-bottom: 3.5px $mainColor solid;
+        border-right: 3.5px $mainColor solid;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        @include flex(row, center, center);
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            background-color: #FF9900;
+        }
+    }
+}

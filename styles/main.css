@@ -1,0 +1,113 @@
+@media (hover: hover) {
+  section.teamConstructor article:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+  }
+}
+
+section.teamConstructor article:active {
+  transform: scale(0.95);
+  transition: all 0.1s ease-out;
+}
+
+body {
+  font-family: "Bai Jamjuree", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+header {
+  background-color: #0075BE;
+  color: #ffffff;
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header img {
+  width: 50px;
+  height: 50px;
+  padding-top: 5px;
+}
+
+.search {
+  background-color: #F5F5F5;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search input {
+  all: unset;
+  border-top: 3.5px #0075BE solid;
+  border-bottom: 3.5px #0075BE solid;
+  border-left: 3.5px #0075BE solid;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 7px 0 0 7px;
+  width: 25%;
+}
+.search input::-moz-placeholder {
+  color: #999999;
+}
+.search input::placeholder {
+  color: #999999;
+}
+.search i {
+  height: 36px;
+  width: 36px;
+  background-color: #FFCC00;
+  border-radius: 0 7px 7px 0;
+  border-top: 3.5px #0075BE solid;
+  border-bottom: 3.5px #0075BE solid;
+  border-right: 3.5px #0075BE solid;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search i img {
+  width: 20px;
+  height: 20px;
+}
+.search i:hover {
+  background-color: #FF9900;
+}
+
+section.teamConstructor {
+  box-sizing: border-box;
+  width: 50%;
+  margin: 90px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: #F5F5F5;
+  gap: 25px;
+  padding: 30px 15px 30px 15px;
+  border: 4.5px solid #0075BE;
+  border-radius: 10px;
+}
+section.teamConstructor article {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2b2b;
+  width: 13.5rem;
+  height: 13.5rem;
+  margin: 0 auto;
+  border-radius: 20px;
+  transition: all 0.2s ease-out;
+}
+section.teamConstructor article img {
+  width: 80px;
+  height: 80px;
+}/*# sourceMappingURL=main.css.map */
