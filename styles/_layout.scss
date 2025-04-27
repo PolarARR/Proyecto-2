@@ -68,7 +68,7 @@ header {
     width: 85%;
     margin: 90px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     background-color: $background;
     gap: 25px;
     padding: 30px 15px 30px 15px;
@@ -80,14 +80,121 @@ header {
         box-sizing: border-box;
         margin: 0 auto;
         border-radius: 20px;
-        border: black 2px solid;
-        width: 290px;
-        height: 320px;
+        border: #1E1E1E 3px solid;
+        width: 240px;
+        height: 300px;
+        transition: all 0.2s ease-out;
+        margin-bottom: 20px;
+        @extend %containerHover;
+        @extend %containerActive;
+
+        i {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 110px;
+            z-index: 0;
+            opacity: 0.4;
+            
+            &.normal {
+                background-color: #A8A77A;
+                background: radial-gradient(circle, #A8A77A , rgba(0,0,0,0) 70%);
+                opacity: 0.8;
+            }
+
+            &.fire {
+                background-color: #EE8130;
+                background: radial-gradient(circle, #EE8130 , rgba(0,0,0,0) 70%);
+            }
+
+            &.water {
+                background-color: #6390F0;
+                background: radial-gradient(circle, #6390F0, rgba(0,0,0,0) 70%);
+            }
+
+            &.electric {
+                background-color: #F7D02C;
+                background: radial-gradient(circle, #F7D02C, rgba(0,0,0,0) 70%);
+            }
+
+            &.grass {
+                background-color: #7AC74C;
+                background: radial-gradient(circle, #7AC74C, rgba(0,0,0,0) 70%);
+            }
+
+            &.ice {
+                background-color: #96D9D6;
+                background: radial-gradient(circle, #96D9D6, rgba(0,0,0,0) 70%);
+            }
+
+            &.fighting {
+                background-color: #C22E28;
+                background: radial-gradient(circle, #C22E28, rgba(0,0,0,0) 70%);
+            }
+
+            &.poison {
+                background-color: #A33EA1;
+                background: radial-gradient(circle, #A33EA1, rgba(0,0,0,0) 70%);
+            }
+
+            &.ground {
+                background-color :#E2BF65;
+                background: radial-gradient(circle, #E2BF65, rgba(0,0,0,0) 70%);
+            }
+
+            &.flying {
+                background-color: #A98FF3;
+                background: radial-gradient(circle, #A98FF3, rgba(0,0,0,0) 70%);
+            }
+
+            &.psychic {
+                background-color: #F95587;
+                background: radial-gradient(circle, #F95587, rgba(0,0,0,0) 70%);
+            }
+
+            &.bug {
+                background-color: #A6B91A;
+                background: radial-gradient(circle, #A6B91A, rgba(0,0,0,0) 70%);
+            }
+
+            &.rock {
+                background-color: #B6A136;
+                background: radial-gradient(circle, #B6A136, rgba(0,0,0,0) 70%);
+            }
+
+            &.ghost {
+                background-color: #735797;
+                background: radial-gradient(circle, #735797, rgba(0,0,0,0) 70%);
+            }
+
+            &.dragon {
+                background-color: #6F35FC;
+                background: radial-gradient(circle, #6F35FC, rgba(0,0,0,0) 70%);
+            }
+
+            &.dark {
+                background-color: #705746;
+                background: radial-gradient(circle, #705746, rgba(0,0,0,0) 70%);
+            }
+
+            &.steel {
+                background-color: #B7B7CE;
+                background: radial-gradient(circle, #B7B7CE, rgba(0,0,0,0) 70%);
+                opacity: 0.8;
+            }
+
+            &.fairy {
+                background-color: #D685AD;
+                background: radial-gradient(circle, #D685AD, rgba(0,0,0,0) 70%);
+            }
+        }
 
         img {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             margin: 40px 0;
+            z-index: 1;
         }
 
         div {
@@ -95,11 +202,83 @@ header {
             gap: 5px;
 
             span {
-                width: 90px;
+                width: 70px;
                 border-radius: 50px;
                 padding: 5px 10px;
-                font-weight: 400;
-                background-color: #FFCC00;
+                margin-bottom: 10px;
+                font-weight: 500;
+
+                &.normal {
+                    background-color: #A8A77A;
+                }
+
+                &.fire {
+                    background-color: #EE8130;
+                }
+
+                &.water {
+                    background-color: #6390F0;
+                }
+
+                &.electric {
+                    background-color: #F7D02C;
+                }
+
+                &.grass {
+                    background-color: #7AC74C;
+                }
+
+                &.ice {
+                    background-color: #96D9D6;
+                }
+
+                &.fighting {
+                    background-color: #C22E28;
+                }
+
+                &.poison {
+                    background-color: #A33EA1;
+                }
+
+                &.ground {
+                    background-color :#E2BF65;
+                }
+
+                &.flying {
+                    background-color: #A98FF3;
+                }
+
+                &.psychic {
+                    background-color: #F95587;
+                }
+
+                &.bug {
+                    background-color: #A6B91A;
+                }
+
+                &.rock {
+                    background-color: #B6A136;
+                }
+
+                &.ghost {
+                    background-color: #735797;
+                }
+
+                &.dragon {
+                    background-color: #6F35FC;
+                }
+
+                &.dark {
+                    background-color: #705746;
+                }
+
+                &.steel {
+                    background-color: #B7B7CE;
+                }
+
+                &.fairy {
+                    background-color: #D685AD;
+                }
             }
         }
     }
