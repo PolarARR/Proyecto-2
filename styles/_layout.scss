@@ -22,7 +22,71 @@ header {
     background-color: #F5F5F5;
     height: 100px;
     width: 100%;
-    @include flex(row, center, center);
+    @include flex(column, center, center);
+    box-sizing: border-box;
+    
+    div {
+        @include flex(row, center, center);
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        z-index: 10001;
+    }
+
+    ul {
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+        background-color: #ffffff;
+        width: px-to-rem(540);
+        @include flex(column, center, center);
+        color: #999999;
+        margin-top: 340px;
+        z-index: 10000;
+
+        &.oneSuggestion {
+            margin-top: 100px;
+        }
+
+        &.twoSuggestions {
+            margin-top: 160px;
+        }
+        
+        &.threeSuggestions {
+            margin-top: 220px;
+        }
+
+        &.fourSuggestions{
+            margin-top: 280px;
+        }
+
+        li {
+            height: 60px;
+            box-sizing: border-box;
+            width: 100%;
+            @include flex(row, space-between, center);
+            padding: 0 10px;
+            
+            &:hover {
+                background-color: #F5F5F5;
+                cursor: pointer;
+                color: #000000;
+
+                img {
+                    transform: scale(1.1);
+                    transition: all 0.2s ease-in;
+                }
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                transition: all 0.2s ease-in;
+            }
+        }
+    }
 
     input {
         all: unset;
@@ -34,9 +98,18 @@ header {
         padding: 8px 12px;
         border-radius: 7px 0 0 7px;
         width: 25%;
+        text-decoration: none;
+        transition: all 0.2s ease-out;
 
         &::placeholder {
             color: #999999;
+        }
+
+        &.searching {
+            border-top: 3.5px #FFCC00 solid;
+            border-bottom: 3.5px #FFCC00 solid;
+            border-left: 3.5px #FFCC00 solid;
+            transition: all 0.2s ease-out;
         }
     }
 
@@ -60,6 +133,14 @@ header {
         &:hover {
             background-color: #FF9900;
         }
+
+        &.searching {
+            border-top: 3.5px #FFCC00 solid;
+            border-bottom: 3.5px #FFCC00 solid;
+            border-right: 3.5px #FFCC00 solid;
+            background-color: #FFCC00;
+            transition: all 0.2s ease-out;
+        }
     }
 }
 
@@ -68,12 +149,19 @@ header {
     width: 85%;
     margin: 90px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     background-color: $background;
     gap: 25px;
     padding: 30px 15px 30px 15px;
     border-radius: 10px;
     text-align: center;
+    min-height: 430px;
+
+    h3 {
+        font-size: px-to-rem(20);
+        font-weight: 400;
+        margin: auto
+    }
 
     article {
         @include flex(column, center, center);
@@ -81,8 +169,8 @@ header {
         margin: 0 auto;
         border-radius: 20px;
         border: #1E1E1E 3px solid;
-        width: 240px;
-        height: 300px;
+        width: 280px;
+        height: 350px;
         transition: all 0.2s ease-out;
         margin-bottom: 20px;
         @extend %containerHover;

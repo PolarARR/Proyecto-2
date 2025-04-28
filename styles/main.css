@@ -38,9 +38,72 @@ header img {
   height: 100px;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.search div {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 10001;
+}
+.search ul {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #ffffff;
+  width: 33.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #999999;
+  margin-top: 340px;
+  z-index: 10000;
+}
+.search ul.oneSuggestion {
+  margin-top: 100px;
+}
+.search ul.twoSuggestions {
+  margin-top: 160px;
+}
+.search ul.threeSuggestions {
+  margin-top: 220px;
+}
+.search ul.fourSuggestions {
+  margin-top: 280px;
+}
+.search ul li {
+  height: 60px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.search ul li:hover {
+  background-color: #F5F5F5;
+  cursor: pointer;
+  color: #000000;
+}
+.search ul li:hover img {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in;
+}
+.search ul li img {
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s ease-in;
 }
 .search input {
   all: unset;
@@ -52,12 +115,20 @@ header img {
   padding: 8px 12px;
   border-radius: 7px 0 0 7px;
   width: 25%;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
 }
 .search input::-moz-placeholder {
   color: #999999;
 }
 .search input::placeholder {
   color: #999999;
+}
+.search input.searching {
+  border-top: 3.5px #FFCC00 solid;
+  border-bottom: 3.5px #FFCC00 solid;
+  border-left: 3.5px #FFCC00 solid;
+  transition: all 0.2s ease-out;
 }
 .search i {
   height: 36px;
@@ -81,18 +152,31 @@ header img {
 .search i:hover {
   background-color: #FF9900;
 }
+.search i.searching {
+  border-top: 3.5px #FFCC00 solid;
+  border-bottom: 3.5px #FFCC00 solid;
+  border-right: 3.5px #FFCC00 solid;
+  background-color: #FFCC00;
+  transition: all 0.2s ease-out;
+}
 
 .pokemons {
   box-sizing: border-box;
   width: 85%;
   margin: 90px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   background-color: #F5F5F5;
   gap: 25px;
   padding: 30px 15px 30px 15px;
   border-radius: 10px;
   text-align: center;
+  min-height: 430px;
+}
+.pokemons h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: auto;
 }
 .pokemons article {
   display: flex;
@@ -103,8 +187,8 @@ header img {
   margin: 0 auto;
   border-radius: 20px;
   border: #1E1E1E 3px solid;
-  width: 240px;
-  height: 300px;
+  width: 280px;
+  height: 350px;
   transition: all 0.2s ease-out;
   margin-bottom: 20px;
 }

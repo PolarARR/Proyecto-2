@@ -19,8 +19,12 @@
 
     <main>
         <section class="search">
-            <input type="text" placeholder="Buscar Pokémon">
-            <i><img src="img/search-icon.svg" alt="Buscar"></i>
+            <div>
+                <input type="text" placeholder="Buscar Pokémon" id="search-input">
+                <i id="search-icon"><img src="img/search-icon.svg" alt="Buscar"></i>     
+            </div>          
+            <ul id="suggestions">
+            </ul>
         </section>
 
         <section class="pokemons"></section>
