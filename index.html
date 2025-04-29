@@ -5,47 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/functions.js" defer></script>
-    <title>Constructor de Equipos</title>
+    <title>Pokédex</title>
 </head>
 <body>
     <header>
-        <h1>Constructor de Equipos</h1>
+        <h1>Pokédex</h1>
         <img src="img/logo.png" alt="Logo">
     </header>
 
     <main>
-        <section class="teamConstructor">
-            <article>
-                <img src="img/empty-pokeball.png" alt="Espacio Vacio">
-            </article>
+        <section class="search">
+            <div>
+                <input type="text" placeholder="Buscar Pokémon" id="search-input">
+                <i id="search-icon"><img src="img/search-icon.svg" alt="Buscar"></i>     
+            </div>          
+            <ul id="suggestions">
+            </ul>
+        </section>
 
-            <article>
-                <img src="img/empty-pokeball.png" alt="Espacio Vacio">
-            </article>
+        <section class="pokemons"></section>
 
-            <article>
-                <img src="img/empty-pokeball.png" alt="Espacio Vacio">
-            </article>
+        <section class="info">
+            <h4>charizard</h4>
+            <img src="img/empty-pokeball.png" alt="">
+            <p class="info__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <article class="info__stats">
+                <div>
+                    <p>hp: </p>
+                    <p>35</p>
+                </div>
 
-            <article>
-                <img src="img/empty-pokeball.png" alt="Espacio Vacio">
-            </article>
+                <div>
+                    <p>attack: </p>
+                    <p>35</p>
+                </div>
 
-            <article>
-                <img src="img/empty-pokeball.png" alt="Espacio Vacio">
-            </article>
+                <div>
+                    <p>defense: </p>
+                    <p>35</p>
+                </div>
 
-            <article>
-                <img src="img/empty-pokeball.png" alt="Espacio Vacio">
+                <div>
+                    <p>spc attack: </p>
+                    <p>35</p>
+                </div>
+
+                <div>
+                    <p>spc defense: </p>
+                    <p>35</p>
+                </div>
+
+                <div>
+                    <p>speed: </p>
+                    <p>35</p>
+                </div>
+            </article>
+            <article class="info__types">
+                <p>Tipo:</p>
+                <div>
+                    <span>fuego</span>
+                    <span>volador</span>
+                </div>
+            </article>
+            <article class="info__types info__types--weaknesses">
+                <p>debilidades:</p>
+                <div>
+                    <span>roca</span>
+                    <span>electrico</span>
+                    <span>agua</span>
+                </div>
             </article>
         </section>
     </main>
+
+    <aside>
+        <button id="poke-button"><img src="img/logo.png" alt="boton Pokémon"></button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum magnam, molestias voluptatum saepe et reiciendis. Aliquam, possimus. Odio facilis consectetur suscipit in cum placeat distinctio nam? Culpa, dolorum odit.</p>
+    </aside>
 
     <footer>
 
