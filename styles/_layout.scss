@@ -106,9 +106,9 @@ header {
         }
 
         &.searching {
-            border-top: 3.5px #FFCC00 solid;
-            border-bottom: 3.5px #FFCC00 solid;
-            border-left: 3.5px #FFCC00 solid;
+            border-top: 3.5px $secondaryColor solid;
+            border-bottom: 3.5px $secondaryColor solid;
+            border-left: 3.5px $secondaryColor solid;
             transition: all 0.2s ease-out;
         }
     }
@@ -116,7 +116,7 @@ header {
     i {
         height: 36px;
         width: 36px;
-        background-color: #FFCC00;
+        background-color: $secondaryColor;
         border-radius: 0 7px 7px 0;
         border-top: 3.5px $mainColor solid;
         border-bottom: 3.5px $mainColor solid;
@@ -135,10 +135,10 @@ header {
         }
 
         &.searching {
-            border-top: 3.5px #FFCC00 solid;
-            border-bottom: 3.5px #FFCC00 solid;
-            border-right: 3.5px #FFCC00 solid;
-            background-color: #FFCC00;
+            border-top: 3.5px $secondaryColor solid;
+            border-bottom: 3.5px $secondaryColor solid;
+            border-right: 3.5px $secondaryColor solid;
+            background-color: $secondaryColor;
             transition: all 0.2s ease-out;
         }
     }
@@ -186,94 +186,94 @@ header {
             opacity: 0.4;
             
             &.normal {
-                background-color: #A8A77A;
+                background-color: $normalType;
                 background: radial-gradient(circle, #A8A77A , rgba(0,0,0,0) 70%);
                 opacity: 0.8;
             }
 
             &.fire {
-                background-color: #EE8130;
+                background-color: $fireType;
                 background: radial-gradient(circle, #EE8130 , rgba(0,0,0,0) 70%);
             }
 
             &.water {
-                background-color: #6390F0;
+                background-color: $waterType;
                 background: radial-gradient(circle, #6390F0, rgba(0,0,0,0) 70%);
             }
 
             &.electric {
-                background-color: #F7D02C;
+                background-color: $electricType;
                 background: radial-gradient(circle, #F7D02C, rgba(0,0,0,0) 70%);
             }
 
             &.grass {
-                background-color: #7AC74C;
+                background-color: $grassType;
                 background: radial-gradient(circle, #7AC74C, rgba(0,0,0,0) 70%);
             }
 
             &.ice {
-                background-color: #96D9D6;
+                background-color:  $iceType;
                 background: radial-gradient(circle, #96D9D6, rgba(0,0,0,0) 70%);
             }
 
             &.fighting {
-                background-color: #C22E28;
+                background-color: $fightingType;
                 background: radial-gradient(circle, #C22E28, rgba(0,0,0,0) 70%);
             }
 
             &.poison {
-                background-color: #A33EA1;
+                background-color: $poisonType;
                 background: radial-gradient(circle, #A33EA1, rgba(0,0,0,0) 70%);
             }
 
             &.ground {
-                background-color :#E2BF65;
+                background-color :$groundType;
                 background: radial-gradient(circle, #E2BF65, rgba(0,0,0,0) 70%);
             }
 
             &.flying {
-                background-color: #A98FF3;
+                background-color: $flyingType;
                 background: radial-gradient(circle, #A98FF3, rgba(0,0,0,0) 70%);
             }
 
             &.psychic {
-                background-color: #F95587;
+                background-color: $psychicType;
                 background: radial-gradient(circle, #F95587, rgba(0,0,0,0) 70%);
             }
 
             &.bug {
-                background-color: #A6B91A;
+                background-color: $bugType;
                 background: radial-gradient(circle, #A6B91A, rgba(0,0,0,0) 70%);
             }
 
             &.rock {
-                background-color: #B6A136;
+                background-color: $rockType;
                 background: radial-gradient(circle, #B6A136, rgba(0,0,0,0) 70%);
             }
 
             &.ghost {
-                background-color: #735797;
+                background-color: $ghostType;
                 background: radial-gradient(circle, #735797, rgba(0,0,0,0) 70%);
             }
 
             &.dragon {
-                background-color: #6F35FC;
+                background-color: $dragonType;
                 background: radial-gradient(circle, #6F35FC, rgba(0,0,0,0) 70%);
             }
 
             &.dark {
-                background-color: #705746;
+                background-color: $darkType;
                 background: radial-gradient(circle, #705746, rgba(0,0,0,0) 70%);
             }
 
             &.steel {
-                background-color: #B7B7CE;
+                background-color: $steelType;
                 background: radial-gradient(circle, #B7B7CE, rgba(0,0,0,0) 70%);
                 opacity: 0.8;
             }
 
             &.fairy {
-                background-color: #D685AD;
+                background-color: $fairyType;
                 background: radial-gradient(circle, #D685AD, rgba(0,0,0,0) 70%);
             }
         }
@@ -297,77 +297,129 @@ header {
                 font-weight: 500;
 
                 &.normal {
-                    background-color: #A8A77A;
+                    background-color: $normalType;
                 }
 
                 &.fire {
-                    background-color: #EE8130;
+                    background-color: $fireType;
                 }
 
                 &.water {
-                    background-color: #6390F0;
+                    background-color: $waterType;
                 }
 
                 &.electric {
-                    background-color: #F7D02C;
+                    background-color: $electricType;
                 }
 
                 &.grass {
-                    background-color: #7AC74C;
+                    background-color: $grassType;
                 }
 
                 &.ice {
-                    background-color: #96D9D6;
+                    background-color: $iceType;
                 }
 
                 &.fighting {
-                    background-color: #C22E28;
+                    background-color: $fightingType;
                 }
 
                 &.poison {
-                    background-color: #A33EA1;
+                    background-color: $poisonType;
                 }
 
                 &.ground {
-                    background-color :#E2BF65;
+                    background-color :$groundType;
                 }
 
                 &.flying {
-                    background-color: #A98FF3;
+                    background-color: $flyingType;
                 }
 
                 &.psychic {
-                    background-color: #F95587;
+                    background-color: $psychicType;
                 }
 
                 &.bug {
-                    background-color: #A6B91A;
+                    background-color: $bugType;
                 }
 
                 &.rock {
-                    background-color: #B6A136;
+                    background-color: $rockType;
                 }
 
                 &.ghost {
-                    background-color: #735797;
+                    background-color: $ghostType;
                 }
 
                 &.dragon {
-                    background-color: #6F35FC;
+                    background-color: $dragonType;
                 }
 
                 &.dark {
-                    background-color: #705746;
+                    background-color: $darkType;
                 }
 
                 &.steel {
-                    background-color: #B7B7CE;
+                    background-color: $steelType;
                 }
 
                 &.fairy {
-                    background-color: #D685AD;
+                    background-color: $fairyType;
                 }
             }
+        }
+    }
+}
+
+aside {
+    width: 350px;
+    background-color: red;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 100%;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    box-shadow: 19px -1px 22px -15px rgba(0, 0, 0, 0.30);
+    transition: all 0.4s ease;
+    z-index: 10000;
+
+    &.activated {
+        left: 0;
+    }
+
+    button {
+        all: unset;
+        position: fixed;
+        left: -30px;
+        top: 50%;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        &:hover {
+            left: 0;
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        &.activated {
+            left: 350px;
+            transform: rotate(360deg);
+
+            &:hover {
+                left: 345px;
+                transform: rotate(315deg);
+                transition: all 0.5s ease;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 }

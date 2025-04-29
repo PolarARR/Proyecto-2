@@ -247,7 +247,7 @@ header img {
   background: radial-gradient(circle, #F95587, rgba(0, 0, 0, 0) 70%);
 }
 .pokemons article i.bug {
-  background-color: #A6B91A;
+  background-color: #A6B91E;
   background: radial-gradient(circle, #A6B91A, rgba(0, 0, 0, 0) 70%);
 }
 .pokemons article i.rock {
@@ -329,7 +329,7 @@ header img {
   background-color: #F95587;
 }
 .pokemons article div span.bug {
-  background-color: #A6B91A;
+  background-color: #A6B91E;
 }
 .pokemons article div span.rock {
   background-color: #B6A136;
@@ -348,6 +348,52 @@ header img {
 }
 .pokemons article div span.fairy {
   background-color: #D685AD;
+}
+
+aside {
+  width: 350px;
+  background-color: red;
+  padding: 25px;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  box-shadow: 19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  z-index: 10000;
+}
+aside.activated {
+  left: 0;
+}
+aside button {
+  all: unset;
+  position: fixed;
+  left: -30px;
+  top: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+aside button:hover {
+  left: 0;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+aside button.activated {
+  left: 350px;
+  transform: rotate(360deg);
+}
+aside button.activated:hover {
+  left: 345px;
+  transform: rotate(315deg);
+  transition: all 0.5s ease;
+}
+aside button img {
+  width: 100%;
+  height: 100%;
 }
 
 section.teamConstructor {
