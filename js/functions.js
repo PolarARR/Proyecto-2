@@ -26,6 +26,119 @@ const createPokemonCard = (pokemon) => {
     card.appendChild(pokemonName);
     card.appendChild(pokemonTypesContainer);
 
+    card.addEventListener("click", async () => {
+        const pokemonInfoContainer = document.querySelector(".info");
+        pokemonInfoContainer.innerHTML = "";
+        try {
+            const speciesResponse = await axios.get(pokemon.species.url);
+            const description = speciesResponse.data.flavor_text_entries.find(entry => entry.language.name === "es");
+            const descriptionText = description ? description.flavor_text : "Descripción no disponible.";
+
+            const pokemonDescription = document.createElement("p");
+            pokemonDescription.textContent = descriptionText;
+            pokemonDescription.classList.add("info__description");
+
+            const statsContainer = document.createElement("article");
+            statsContainer.classList.add("info__stats");
+
+            const stats = [];
+            for (let i = 0; i < pokemon.stats.length; i++) {
+                stats.push({
+                    name: pokemon.stats[i].stat.name,
+                    value: pokemon.stats[i].base_stat
+                });
+            }
+
+            for (let i = 0; i < stats.length; i++) {
+                const statElement = document.createElement('p');
+                const statValue = document.createElement("p");
+                const statsDiv = document.createElement("div");
+                statElement.textContent = `${stats[i].name}: `;
+                statValue.textContent = `${stats[i].value}`;
+                statsDiv.appendChild(statElement);
+                statsDiv.appendChild(statValue);
+                statsContainer.appendChild(statsDiv);
+            }
+
+            const abilitiesContainer = document.createElement("article");
+            abilitiesContainer.classList.add("info__types");
+            abilitiesContainer.classList.add("info__types--abilities");
+
+            const abilitiesTitle = document.createElement("p");
+            abilitiesTitle.textContent = ("Habilidades:");
+
+            const abilitiesDiv = document.createElement("div");
+            let abilities = "";
+            for (let i = 0; i < pokemon.abilities.length; i++) {
+                abilities += pokemon.abilities[i].ability.name;
+                if (i < pokemon.abilities.length - 1) {
+                    abilities += ", ";
+                }
+            }
+            const abilitiesSpan = document.createElement("span");
+            abilitiesSpan.textContent = (abilities);
+            abilitiesDiv.appendChild(abilitiesSpan);
+            abilitiesContainer.appendChild(abilitiesTitle);
+            abilitiesContainer.appendChild(abilitiesSpan);
+
+            const pokemonInfoImg = document.createElement('img');
+            pokemonInfoImg.src = pokemon.sprites.front_default;
+            pokemonInfoImg.alt = pokemon.name;
+            
+            const pokemonInfoName = document.createElement('h2');
+            pokemonInfoName.textContent = pokemon.name;
+
+            const pokemonInfoTypesContainer = document.createElement('div');
+
+            const pokemonInfoTypeStyle = document.createElement('i');
+
+            pokemon.types.forEach(type => {
+                const pokemonInfoType = document.createElement('span');
+                const firstInfoType = pokemon.types[0];
+                pokemonInfoType.textContent = type.type.name;
+                pokemonInfoType.classList.add('type', type.type.name);
+                pokemonInfoTypeStyle.classList.add('type', firstInfoType.type.name);
+                pokemonInfoTypesContainer.appendChild(pokemonInfoType);
+            });
+
+            const typesContainer = document.createElement("article");
+            typesContainer.classList.add("info__types");
+
+            const typeTitle = document.createElement("p");
+            typeTitle.textContent = ("Tipo:");
+
+            typesContainer.appendChild(typeTitle);
+            typesContainer.appendChild(pokemonInfoTypesContainer);
+
+            const quitIconContainer = document.createElement("i");
+            quitIconContainer.classList.add("search__quit");
+
+            const quitIcon = document.createElement("img");
+            quitIcon.src = ("img/x-icon.svg");
+            quitIcon.alt = ("Quitar");
+            
+            quitIconContainer.appendChild(quitIcon);
+
+            pokemonInfoContainer.appendChild(pokemonInfoName);
+            pokemonInfoContainer.appendChild(quitIconContainer);
+            pokemonInfoContainer.appendChild(pokemonInfoImg);
+            pokemonInfoContainer.appendChild(pokemonInfoTypeStyle);
+            pokemonInfoContainer.appendChild(pokemonDescription);
+            pokemonInfoContainer.appendChild(statsContainer);
+            pokemonInfoContainer.appendChild(typesContainer);
+            pokemonInfoContainer.appendChild(abilitiesContainer);
+
+            pokemonInfoContainer.classList.add("show");
+
+            quitIcon.addEventListener("click", () => {
+                pokemonInfoContainer.classList.remove("show");
+            });
+
+        } catch (error){
+            console.log("Este es el error: ", error);
+        }
+    });
+
     return card;
 }
 

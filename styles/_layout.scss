@@ -184,98 +184,7 @@ header {
             margin-bottom: 110px;
             z-index: 0;
             opacity: 0.4;
-            
-            &.normal {
-                background-color: $normalType;
-                background: radial-gradient(circle, #A8A77A , rgba(0,0,0,0) 70%);
-                opacity: 0.8;
-            }
-
-            &.fire {
-                background-color: $fireType;
-                background: radial-gradient(circle, #EE8130 , rgba(0,0,0,0) 70%);
-            }
-
-            &.water {
-                background-color: $waterType;
-                background: radial-gradient(circle, #6390F0, rgba(0,0,0,0) 70%);
-            }
-
-            &.electric {
-                background-color: $electricType;
-                background: radial-gradient(circle, #F7D02C, rgba(0,0,0,0) 70%);
-            }
-
-            &.grass {
-                background-color: $grassType;
-                background: radial-gradient(circle, #7AC74C, rgba(0,0,0,0) 70%);
-            }
-
-            &.ice {
-                background-color:  $iceType;
-                background: radial-gradient(circle, #96D9D6, rgba(0,0,0,0) 70%);
-            }
-
-            &.fighting {
-                background-color: $fightingType;
-                background: radial-gradient(circle, #C22E28, rgba(0,0,0,0) 70%);
-            }
-
-            &.poison {
-                background-color: $poisonType;
-                background: radial-gradient(circle, #A33EA1, rgba(0,0,0,0) 70%);
-            }
-
-            &.ground {
-                background-color :$groundType;
-                background: radial-gradient(circle, #E2BF65, rgba(0,0,0,0) 70%);
-            }
-
-            &.flying {
-                background-color: $flyingType;
-                background: radial-gradient(circle, #A98FF3, rgba(0,0,0,0) 70%);
-            }
-
-            &.psychic {
-                background-color: $psychicType;
-                background: radial-gradient(circle, #F95587, rgba(0,0,0,0) 70%);
-            }
-
-            &.bug {
-                background-color: $bugType;
-                background: radial-gradient(circle, #A6B91A, rgba(0,0,0,0) 70%);
-            }
-
-            &.rock {
-                background-color: $rockType;
-                background: radial-gradient(circle, #B6A136, rgba(0,0,0,0) 70%);
-            }
-
-            &.ghost {
-                background-color: $ghostType;
-                background: radial-gradient(circle, #735797, rgba(0,0,0,0) 70%);
-            }
-
-            &.dragon {
-                background-color: $dragonType;
-                background: radial-gradient(circle, #6F35FC, rgba(0,0,0,0) 70%);
-            }
-
-            &.dark {
-                background-color: $darkType;
-                background: radial-gradient(circle, #705746, rgba(0,0,0,0) 70%);
-            }
-
-            &.steel {
-                background-color: $steelType;
-                background: radial-gradient(circle, #B7B7CE, rgba(0,0,0,0) 70%);
-                opacity: 0.8;
-            }
-
-            &.fairy {
-                background-color: $fairyType;
-                background: radial-gradient(circle, #D685AD, rgba(0,0,0,0) 70%);
-            }
+            @extend %backgroundType;
         }
 
         img {
@@ -295,78 +204,7 @@ header {
                 padding: 5px 10px;
                 margin-bottom: 10px;
                 font-weight: 500;
-
-                &.normal {
-                    background-color: $normalType;
-                }
-
-                &.fire {
-                    background-color: $fireType;
-                }
-
-                &.water {
-                    background-color: $waterType;
-                }
-
-                &.electric {
-                    background-color: $electricType;
-                }
-
-                &.grass {
-                    background-color: $grassType;
-                }
-
-                &.ice {
-                    background-color: $iceType;
-                }
-
-                &.fighting {
-                    background-color: $fightingType;
-                }
-
-                &.poison {
-                    background-color: $poisonType;
-                }
-
-                &.ground {
-                    background-color :$groundType;
-                }
-
-                &.flying {
-                    background-color: $flyingType;
-                }
-
-                &.psychic {
-                    background-color: $psychicType;
-                }
-
-                &.bug {
-                    background-color: $bugType;
-                }
-
-                &.rock {
-                    background-color: $rockType;
-                }
-
-                &.ghost {
-                    background-color: $ghostType;
-                }
-
-                &.dragon {
-                    background-color: $dragonType;
-                }
-
-                &.dark {
-                    background-color: $darkType;
-                }
-
-                &.steel {
-                    background-color: $steelType;
-                }
-
-                &.fairy {
-                    background-color: $fairyType;
-                }
+                @extend %typeColor
             }
         }
     }
@@ -374,7 +212,7 @@ header {
 
 .info {
     position: fixed;
-    right: -100%;
+    left: -100%;
     width: 90%;
     height: 90%;
     background-color: lightblue;
@@ -387,6 +225,10 @@ header {
     grid-template-rows: auto;
     padding: 0 50px;
     box-sizing: border-box;
+    background-color: $background;
+    border: #000000 3px solid;
+    min-height: 500px;
+    min-width: 1050px;
 
     &.show {
         top: 50%;
@@ -394,11 +236,52 @@ header {
         transform: translate(-50%, -50%);
     }
 
-    h4 {
+    h2 {
         grid-column: 1 / 4;
         grid-row: 1;
     }
 
+    i {
+        grid-column: 1;
+        grid-row: 2;
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.4;
+        @extend %backgroundType;
+
+        &.search__quit {
+            all: unset;
+            position: absolute;
+            background-color: #ff0000;
+            width: 30px;
+            height: 30px;
+            grid-column: 3;
+            grid-row: 1;
+            right: 0;
+            top: 0;
+            border-radius: 0 5px 0 0;
+            border-left: #000000 2.5px solid;
+            border-bottom: #000000 2.5px solid;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &:hover {
+            background-color: #e00000;
+        }
+
+        &:active {
+            background-color: #ff0000;
+        }
+    }
+        
     img {
         grid-column: 1;
         grid-row: 2;
@@ -408,12 +291,13 @@ header {
     }
 
     .info__description {
-        grid-column: 3;
-        grid-row: 2 / 4;
+        grid-column: 2/ 4;
+        grid-row: 3;
         margin: 10px;
 
         p {
-            margin: 0;
+            margin: auto;
+            font-weight: 500;
         }
     }
 
@@ -457,85 +341,14 @@ header {
                     padding: 5px 10px;
                     margin-bottom: 10px;
                     font-weight: 400;
-    
-                    &.normal {
-                        background-color: $normalType;
-                    }
-    
-                    &.fire {
-                        background-color: $fireType;
-                    }
-    
-                    &.water {
-                        background-color: $waterType;
-                    }
-    
-                    &.electric {
-                        background-color: $electricType;
-                    }
-    
-                    &.grass {
-                        background-color: $grassType;
-                    }
-    
-                    &.ice {
-                        background-color: $iceType;
-                    }
-    
-                    &.fighting {
-                        background-color: $fightingType;
-                    }
-    
-                    &.poison {
-                        background-color: $poisonType;
-                    }
-    
-                    &.ground {
-                        background-color :$groundType;
-                    }
-    
-                    &.flying {
-                        background-color: $flyingType;
-                    }
-    
-                    &.psychic {
-                        background-color: $psychicType;
-                    }
-    
-                    &.bug {
-                        background-color: $bugType;
-                    }
-    
-                    &.rock {
-                        background-color: $rockType;
-                    }
-    
-                    &.ghost {
-                        background-color: $ghostType;
-                    }
-    
-                    &.dragon {
-                        background-color: $dragonType;
-                    }
-    
-                    &.dark {
-                        background-color: $darkType;
-                    }
-    
-                    &.steel {
-                        background-color: $steelType;
-                    }
-    
-                    &.fairy {
-                        background-color: $fairyType;
-                    }
+                    @extend %typeColor
                 }
             }    
         }
 
-        &.info__types--weaknesses {
-            grid-column: 2;
-            grid-row: 3;
+        &.info__types--abilities {
+            grid-column: 3;
+            grid-row: 2;
         }
     }
 }
