@@ -1,3 +1,11 @@
+const pokeButton = document.querySelector("#poke-boton");
+const pokemonInfoContainer = document.querySelector(".info");
+
+pokeButton.addEventListener("click", () => {
+    pokeButton.classList.toggle("activated");
+    pokemonInfoContainer.classList.toggle("show");
+});
+
 const createPokemonCard = (pokemon) => {
     const card = document.createElement('article');
 
@@ -27,8 +35,14 @@ const createPokemonCard = (pokemon) => {
     card.appendChild(pokemonTypesContainer);
 
     card.addEventListener("click", async () => {
-        const pokemonInfoContainer = document.querySelector(".info");
         pokemonInfoContainer.innerHTML = "";
+        
+        if (pokeButton.classList.contains("activated")) {
+
+        } else {
+            pokeButton.classList.add("activated");
+        }
+
         try {
             const speciesResponse = await axios.get(pokemon.species.url);
             const description = speciesResponse.data.flavor_text_entries.find(entry => entry.language.name === "es");
@@ -92,6 +106,8 @@ const createPokemonCard = (pokemon) => {
 
             const pokemonInfoTypeStyle = document.createElement('i');
 
+            pokemonInfoTypeStyle.appendChild(pokemonInfoImg);
+
             pokemon.types.forEach(type => {
                 const pokemonInfoType = document.createElement('span');
                 const firstInfoType = pokemon.types[0];
@@ -104,35 +120,20 @@ const createPokemonCard = (pokemon) => {
             const typesContainer = document.createElement("article");
             typesContainer.classList.add("info__types");
 
-            const typeTitle = document.createElement("p");
-            typeTitle.textContent = ("Tipo:");
-
-            typesContainer.appendChild(typeTitle);
             typesContainer.appendChild(pokemonInfoTypesContainer);
 
-            const quitIconContainer = document.createElement("i");
-            quitIconContainer.classList.add("search__quit");
-
-            const quitIcon = document.createElement("img");
-            quitIcon.src = ("img/x-icon.svg");
-            quitIcon.alt = ("Quitar");
-            
-            quitIconContainer.appendChild(quitIcon);
-
             pokemonInfoContainer.appendChild(pokemonInfoName);
-            pokemonInfoContainer.appendChild(quitIconContainer);
-            pokemonInfoContainer.appendChild(pokemonInfoImg);
             pokemonInfoContainer.appendChild(pokemonInfoTypeStyle);
             pokemonInfoContainer.appendChild(pokemonDescription);
             pokemonInfoContainer.appendChild(statsContainer);
             pokemonInfoContainer.appendChild(typesContainer);
             pokemonInfoContainer.appendChild(abilitiesContainer);
 
-            pokemonInfoContainer.classList.add("show");
-
-            quitIcon.addEventListener("click", () => {
-                pokemonInfoContainer.classList.remove("show");
-            });
+            if (pokemonInfoContainer.classList.contains("show")) {
+                
+            } else {
+                pokemonInfoContainer.classList.add("show");
+            }
 
         } catch (error){
             console.log("Este es el error: ", error);
@@ -146,7 +147,7 @@ const loadPokemons = async () => {
     const pokemonGrid = document.querySelector('.pokemons');
     const orderedPokemons = [];
     try {
-        const response = await axios.get("https://pokeapi.co/api/v2/pokemon", {params: {limit: 1302}});
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon", {params: {limit:10000}});
         const pokemons = response.data.results;
 
         pokemonGrid.innerHTML = "";
@@ -294,12 +295,5 @@ const loadPokemons = async () => {
         console.error("Error:", error);
     }
 }
-const pokeButton = document.querySelector("#poke-button");
-const menu = document.querySelector("aside");
-
-pokeButton.addEventListener("click", () => {
-    menu.classList.toggle("activated");
-    pokeButton.classList.toggle("activated");
-});
 
 document.addEventListener("DOMContentLoaded", loadPokemons);

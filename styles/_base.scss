@@ -224,3 +224,77 @@ $flyingType:#A98FF3;
         background: radial-gradient(circle, $fairyType, rgba(0,0,0,0) 70%);
     }
 }
+
+%borderType {
+    &.normal {
+        border: 5px solid $normalType;
+    }
+
+    &.fire {
+        border: 5px solid $fireType;
+    }
+
+    &.water {
+        border: 5px solid $waterType;
+    }
+
+    &.electric {
+        border: 5px solid $electricType;
+    }
+
+    &.grass {
+        border: 5px solid  $grassType;
+    }
+
+    &.ice {
+        border: 5px solid $iceType;
+    }
+
+    &.fighting {
+        border: 5px solid  $fightingType;
+    }
+
+    &.poison {
+        border: 5px solid  $poisonType;
+    }
+
+    &.ground {
+        border: 5px solid $groundType;
+    }
+
+    &.flying {
+        background-color: $flyingType;
+    }
+
+    &.psychic {
+        border: 5px solid  $psychicType;
+    }
+
+    &.bug {
+        border: 5px solid  $bugType;
+    }
+
+    &.rock {
+        border: 5px solid  $rockType;
+    }
+
+    &.ghost {
+        border: 5px solid $ghostType;
+    }
+
+    &.dragon {
+        border: 5px solid  $dragonType;
+    }
+
+    &.dark {
+        border: 5px solid  $darkType;
+    }
+
+    &.steel {
+        border: 5px solid  $steelType;
+    }
+
+    &.fairy {
+        border: 5px solid  $fairyType;
+    }
+}
