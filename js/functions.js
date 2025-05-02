@@ -143,11 +143,12 @@ const createPokemonCard = (pokemon) => {
     return card;
 }
 
-const loadPokemons = async () => {
-    const pokemonGrid = document.querySelector('.pokemons');
+const pokemonGrid = document.querySelector('.pokemons');
+
+const loadPokemons = async (offset = 0, limit = 0) => {
     const orderedPokemons = [];
     try {
-        const response = await axios.get("https://pokeapi.co/api/v2/pokemon", {params: {limit:10000}});
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon", {params: {offset, limit}});
         const pokemons = response.data.results;
 
         pokemonGrid.innerHTML = "";
@@ -166,7 +167,7 @@ const loadPokemons = async () => {
 
         searchInput.addEventListener("input", (event) => {
             const searchUl = document.querySelector("#suggestions");
-            const searchedPokemon = orderedPokemons.filter(pokemon => 
+            const searchedPokemon = orderedPokemons.filter((pokemon) => 
                 pokemon.name.toLowerCase().includes(event.target.value.toLowerCase())
             );                 
             let counter = 0;
@@ -233,7 +234,7 @@ const loadPokemons = async () => {
                 const searchUl = document.querySelector("#suggestions");
                 searchUl.innerHTML = "";
                 searchUl.classList.remove("fourSuggestions", "threeSuggestions", "twoSuggestions", "oneSuggestion");    
-            }, 1000);
+            }, 600);
         });
 
         searchInput.addEventListener("keydown", (event) => {
@@ -296,4 +297,111 @@ const loadPokemons = async () => {
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadPokemons);
+const searchContainer = document.querySelector(".search");
+const backIcon = document.querySelector("#back-icon");
+
+backIcon.addEventListener("click", () => {
+    location.reload();
+});
+
+const nationalDex = document.querySelector(".pokemons__national");
+const firstGen = document.querySelector(".pokemons__first");
+const secondGen = document.querySelector(".pokemons__second");
+const thirdGen = document.querySelector(".pokemons__third");
+const fourthGen = document.querySelector(".pokemons__fourth");
+const fifthGen = document.querySelector(".pokemons__fifth");
+const sixthGen = document.querySelector(".pokemons__sixth");
+const seventhGen = document.querySelector(".pokemons__seventh");
+const eighthGen = document.querySelector(".pokemons__eighth");
+const ninthGen = document.querySelector(".pokemons__ninth");
+const alternate = document.querySelector(".pokemons__alternate");
+
+nationalDex.addEventListener("click", () => {
+    loadPokemons(0, 10000);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+    setTimeout(() => {
+        alert("Puede que el buscador no funcione hasta que todos los Pokémon terminen de cargar. Por favor, espere un momento para poder usarlo. :)");
+    }, 1000);});
+
+firstGen.addEventListener("click", () => {
+    loadPokemons(0, 151);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+secondGen.addEventListener("click", () => {
+    loadPokemons(151, 100);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+thirdGen.addEventListener("click", () => {
+    loadPokemons(251, 135);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+fourthGen.addEventListener("click", () => {
+    loadPokemons(386, 108);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+fifthGen.addEventListener("click", () => {
+    loadPokemons(494, 155);
+    pokemonGrid.classList.add("activated");
+    backIcon.classList.add("activated");
+    searchContainer.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+sixthGen.addEventListener("click", () => {
+    loadPokemons(649, 72);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+seventhGen.addEventListener("click", () => {
+    loadPokemons(721, 88);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+eighthGen.addEventListener("click", () => {
+    loadPokemons(809, 96);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+ninthGen.addEventListener("click", () => {
+    loadPokemons(905, 120);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});
+
+alternate.addEventListener("click", () => {
+    loadPokemons(1025, 1000);
+    pokemonGrid.classList.add("activated");
+    searchContainer.classList.add("activated");
+    backIcon.classList.add("activated");
+    pokeButton.classList.add("show");
+});

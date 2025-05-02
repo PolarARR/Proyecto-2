@@ -1,12 +1,12 @@
 @media (hover: hover) {
-  section.teamConstructor article:hover, .pokemons article:hover {
+  section.teamConstructor article:hover, .pokemons article:hover, .pokemons div:hover, header i:hover {
     transform: scale(1.05);
     transition: all 0.2s ease-out;
     cursor: pointer;
   }
 }
 
-section.teamConstructor article:active, .pokemons article:active {
+section.teamConstructor article:active, .pokemons article:active, .pokemons div:active, header i:active {
   transform: scale(0.95);
   transition: all 0.1s ease-out;
 }
@@ -204,6 +204,9 @@ body {
 }
 
 header {
+  width: 100%;
+  position: fixed;
+  top: 0;
   background-color: #0075BE;
   color: #ffffff;
   gap: 5px;
@@ -211,22 +214,46 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  z-index: 30000;
 }
 header img {
   width: 50px;
   height: 50px;
   padding-top: 5px;
 }
+header i {
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  transition: all 0.2s ease-out;
+  display: none;
+}
+header i.activated {
+  display: flex;
+}
+header i img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .search {
   background-color: #F5F5F5;
   height: 100px;
   width: 100%;
+  display: none;
+  box-sizing: border-box;
+  margin-top: 86px;
+}
+.search.activated {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
 }
 .search div {
   display: flex;
@@ -276,14 +303,16 @@ header img {
   align-items: center;
   padding: 0 10px;
 }
-.search ul li:hover {
-  background-color: #F5F5F5;
-  cursor: pointer;
-  color: #000000;
-}
-.search ul li:hover img {
-  transform: scale(1.1);
-  transition: all 0.2s ease-in;
+@media (hover: hover) {
+  .search ul li:hover {
+    background-color: #F5F5F5;
+    cursor: pointer;
+    color: #000000;
+  }
+  .search ul li:hover img {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in;
+  }
 }
 .search ul li img {
   width: 50px;
@@ -330,12 +359,14 @@ header img {
   justify-content: center;
   align-items: center;
 }
+@media (hover: hover) {
+  .search i:hover {
+    background-color: #FF9900;
+  }
+}
 .search i img {
   width: 20px;
   height: 20px;
-}
-.search i:hover {
-  background-color: #FF9900;
 }
 .search i.searching {
   border-top: 3.5px #FFCC00 solid;
@@ -350,13 +381,35 @@ header img {
   width: 85%;
   margin: 90px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   background-color: #F5F5F5;
   gap: 25px;
   padding: 30px 15px 30px 15px;
   border-radius: 10px;
   text-align: center;
   min-height: 430px;
+}
+.pokemons.activated {
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+.pokemons div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: #1E1E1E 3px solid;
+  width: 350px;
+  height: 220px;
+  transition: all 0.2s ease-out;
+  margin-bottom: 20px;
+  padding: 25px;
+}
+.pokemons div img {
+  width: 80px;
+  height: 80px;
 }
 .pokemons h3 {
   font-size: 1.25rem;
@@ -393,6 +446,7 @@ header img {
   z-index: 1;
 }
 .pokemons article div {
+  all: unset;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -413,7 +467,7 @@ header img {
   left: -100%;
   text-align: center;
   font-size: 20px;
-  z-index: 20000;
+  z-index: 40000;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -524,7 +578,7 @@ header img {
 button {
   all: unset;
   position: fixed;
-  left: -30px;
+  left: -100%;
   top: 50%;
   width: 70px;
   height: 70px;
@@ -533,19 +587,26 @@ button {
   transition: all 0.5s ease;
   z-index: 20000;
 }
-button:hover {
-  left: 0;
-  transform: rotate(45deg);
-  transition: all 0.5s ease;
+button.show {
+  left: -30px;
+}
+@media (hover: hover) {
+  button:hover {
+    left: 0;
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+  }
 }
 button.activated {
   left: 505px;
   transform: rotate(360deg);
 }
-button.activated:hover {
-  left: 500px;
-  transform: rotate(315deg);
-  transition: all 0.5s ease;
+@media (hover: hover) {
+  button.activated:hover {
+    left: 500px;
+    transform: rotate(315deg);
+    transition: all 0.5s ease;
+  }
 }
 button img {
   width: 100%;

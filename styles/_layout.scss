@@ -6,15 +6,43 @@ body {
 }
 
 header {
+    width: 100%;
+    position: fixed;
+    top: 0;
     background-color: $mainColor;
     color: #ffffff;
     gap: 5px;
     @include flex(row, center, center);
+    z-index: 30000;
     
     img {
         width: 50px;
         height: 50px;
         padding-top: 5px;
+    }
+
+    i {
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        @extend %containerHover;
+        @extend %containerActive;
+        transition: all 0.2s ease-out;
+        display: none;
+
+        &.activated {
+            display: flex;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
     }
 }
 
@@ -22,8 +50,13 @@ header {
     background-color: #F5F5F5;
     height: 100px;
     width: 100%;
-    @include flex(column, center, center);
+    display: none;
     box-sizing: border-box;
+    margin-top: 86px;
+
+    &.activated {
+        @include flex(column, center, center);
+    }
     
     div {
         @include flex(row, center, center);
@@ -68,15 +101,16 @@ header {
             width: 100%;
             @include flex(row, space-between, center);
             padding: 0 10px;
-            
-            &:hover {
-                background-color: #F5F5F5;
-                cursor: pointer;
-                color: #000000;
+            @media (hover: hover) {
+                &:hover {
+                    background-color: #F5F5F5;
+                    cursor: pointer;
+                    color: #000000;
 
-                img {
-                    transform: scale(1.1);
-                    transition: all 0.2s ease-in;
+                    img {
+                        transform: scale(1.1);
+                        transition: all 0.2s ease-in;
+                    }
                 }
             }
 
@@ -124,14 +158,15 @@ header {
         cursor: pointer;
         transition: all 0.2s ease-out;
         @include flex(row, center, center);
+        @media (hover: hover) {
+            &:hover {
+                background-color: #FF9900;
+            }
+        }
 
         img {
             width: 20px;
             height: 20px;
-        }
-
-        &:hover {
-            background-color: #FF9900;
         }
 
         &.searching {
@@ -149,13 +184,37 @@ header {
     width: 85%;
     margin: 90px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     background-color: $background;
     gap: 25px;
     padding: 30px 15px 30px 15px;
     border-radius: 10px;
     text-align: center;
     min-height: 430px;
+
+    &.activated {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+
+    div {
+        @include flex (row, space-between, center);
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-radius: 20px;
+        border: #1E1E1E 3px solid;
+        width: 350px;
+        height: 220px;
+        transition: all 0.2s ease-out;
+        margin-bottom: 20px;
+        @extend %containerHover;
+        @extend %containerActive;
+        padding: 25px;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
 
     h3 {
         font-size: px-to-rem(20);
@@ -195,6 +254,7 @@ header {
         }
 
         div {
+            all: unset;
             @include flex(row, center, center);
             gap: 5px;
 
@@ -216,7 +276,7 @@ header {
     left: -100%;
     text-align: center;
     font-size: 20px;
-    z-index: 20000;
+    z-index: 40000;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -335,7 +395,7 @@ header {
 button {
     all: unset;
     position: fixed;
-    left: -30px;
+    left: -100%;
     top: 50%;
     width: 70px;
     height: 70px;
@@ -344,20 +404,28 @@ button {
     transition: all 0.5s ease;
     z-index: 20000;
 
-    &:hover {
-        left: 0;
-        transform: rotate(45deg);
-        transition: all 0.5s ease;
+    &.show {
+        left: -30px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            left: 0;
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
     }
 
     &.activated {
         left: 505px;
         transform: rotate(360deg);
 
-        &:hover {
-            left: 500px;
-            transform: rotate(315deg);
-            transition: all 0.5s ease;
+        @media (hover: hover) {
+            &:hover {
+                left: 500px;
+                transform: rotate(315deg);
+                transition: all 0.5s ease;
+            }
         }
     }
 

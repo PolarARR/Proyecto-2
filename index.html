@@ -13,6 +13,7 @@
 </head>
 <body>
     <header>
+        <i id="back-icon"><img src="img/arrow-left-circle-icon.svg" alt="Volver"></i>
         <h1>Pokédex</h1>
         <img src="img/logo.png" alt="Logo">
     </header>
@@ -21,13 +22,69 @@
         <section class="search">
             <div>
                 <input type="text" placeholder="Buscar Pokémon" id="search-input">
-                <i id="search-icon"><img src="img/search-icon.svg" alt="Buscar"></i>     
+                <i id="search-icon"><img src="img/search-icon.svg" alt="Buscar" class="reinciciar"></i >     
             </div>          
-            <ul id="suggestions">
-            </ul>
+            <ul id="suggestions"></ul>
         </section>
 
-        <section class="pokemons"></section>
+        <section class="pokemons">
+            <div class="pokemons__national">
+                <h3>Pokédex Nacional</h3>
+                <img src="img/national-dex-img.webp" alt="Pokédex Nacional">
+            </div>
+
+            <div class="pokemons__first">
+                <h3>Primera Generación</h3>
+                <img src="img/first-gen-img.png" alt="Primera Generación">
+            </div>
+
+            <div class="pokemons__second">
+                <img src="img/lugia-sprite-img.webp" alt="Segunda Generación">
+                <h3>Segunda Generación</h3>
+                <img src="img/ho-oh-sprite-img.webp" alt="Segunda Generación">
+            </div>
+
+            <div class="pokemons__third">
+                <h3>Tercera Generación</h3>
+                <img src="img/third-gen-img.png" alt="Tercera Generación">
+            </div>
+
+            <div class="pokemons__fourth">
+                <h3>Cuarta Generación</h3>
+                <img src="img/fourth-gen-img.png" alt="Cuarta Generación">
+            </div> 
+
+            <div class="pokemons__fifth">
+                <h3>Quinta Generación</h3>
+                <img src="img/fifth-gen-img.webp" alt="Quinta Generación">
+            </div> 
+
+            <div class="pokemons__sixth">
+                <h3>Sexta Generación</h3>
+                <img src="img/sixth-gen-img.webp" alt="Sexta Generación">
+            </div> 
+
+            <div class="pokemons__seventh">
+                <h3>Septima Generación</h3>
+                <img src="img/seventh-gen-img.webp" alt="Septima Generación">
+            </div> 
+
+            <div class="pokemons__eighth">
+                <h3>Octava Generación</h3>
+                <img src="img/eigtht-gen-img.webp" alt="Octava Generación">
+            </div> 
+
+            <div class="pokemons__ninth">
+                <h3>Novena Generación</h3>
+                <img src="img/ninth-gen-img.png" alt="Novena Generación">
+            </div> 
+
+            <div class="pokemons__alternate">
+                <h3>Formas Alternas</h3>
+                <img src="img/alternate-img.png" alt="Formas Alternas">
+            </div> 
+        </section>
+
         <section class="info"><p class="info__empty">Seleccione a un pokémon por favor :&#41;</p></section>
         <button id="poke-boton"><img src="img/logo.png" alt="boton Pokémon"></button>
     </main>
