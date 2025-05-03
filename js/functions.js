@@ -122,6 +122,19 @@ const createPokemonCard = (pokemon) => {
 
             typesContainer.appendChild(pokemonInfoTypesContainer);
 
+            const quitIcon = document.createElement("i");
+            quitIcon.classList.add("info__quit");
+
+            const quitImg = document.createElement("img");
+            quitImg.src = ("img/x-icon.svg");
+
+            quitIcon.appendChild(quitImg);
+
+            quitIcon.addEventListener("click", () => {
+                pokemonInfoContainer.classList.remove("show");
+            });
+
+            pokemonInfoContainer.appendChild(quitIcon);
             pokemonInfoContainer.appendChild(pokemonInfoName);
             pokemonInfoContainer.appendChild(pokemonInfoTypeStyle);
             pokemonInfoContainer.appendChild(pokemonDescription);
@@ -328,7 +341,9 @@ nationalDex.addEventListener("click", () => {
 
 firstGen.addEventListener("click", () => {
     loadPokemons(0, 151);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -336,7 +351,9 @@ firstGen.addEventListener("click", () => {
 
 secondGen.addEventListener("click", () => {
     loadPokemons(151, 100);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -344,7 +361,9 @@ secondGen.addEventListener("click", () => {
 
 thirdGen.addEventListener("click", () => {
     loadPokemons(251, 135);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -352,7 +371,9 @@ thirdGen.addEventListener("click", () => {
 
 fourthGen.addEventListener("click", () => {
     loadPokemons(386, 108);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -360,7 +381,9 @@ fourthGen.addEventListener("click", () => {
 
 fifthGen.addEventListener("click", () => {
     loadPokemons(494, 155);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     backIcon.classList.add("activated");
     searchContainer.classList.add("activated");
     pokeButton.classList.add("show");
@@ -368,7 +391,9 @@ fifthGen.addEventListener("click", () => {
 
 sixthGen.addEventListener("click", () => {
     loadPokemons(649, 72);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -376,7 +401,9 @@ sixthGen.addEventListener("click", () => {
 
 seventhGen.addEventListener("click", () => {
     loadPokemons(721, 88);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -384,7 +411,9 @@ seventhGen.addEventListener("click", () => {
 
 eighthGen.addEventListener("click", () => {
     loadPokemons(809, 96);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -392,7 +421,9 @@ eighthGen.addEventListener("click", () => {
 
 ninthGen.addEventListener("click", () => {
     loadPokemons(905, 120);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");
@@ -400,7 +431,9 @@ ninthGen.addEventListener("click", () => {
 
 alternate.addEventListener("click", () => {
     loadPokemons(1025, 1000);
-    pokemonGrid.classList.add("activated");
+    setTimeout(() => {
+        pokemonGrid.classList.add("activated");
+    }, 500);
     searchContainer.classList.add("activated");
     backIcon.classList.add("activated");
     pokeButton.classList.add("show");

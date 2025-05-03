@@ -298,3 +298,9 @@ $flyingType:#A98FF3;
         border: 5px solid  $fairyType;
     }
 }
+
+// ------------------------------   Medias    ------------------------------
+
+@mixin media {
+    @media screen and (max-width:46.875rem) { @content; }
+}

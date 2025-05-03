@@ -14,11 +14,24 @@ header {
     gap: 5px;
     @include flex(row, center, center);
     z-index: 30000;
+    @include media {
+        height: 86px;
+    }
+
+    h1 {
+        @include media {
+            font-size: 25px;
+        }
+    }
     
     img {
         width: 50px;
         height: 50px;
         padding-top: 5px;
+        @include media {
+            height: 40px;
+            width: 40px;
+        }
     }
 
     i {
@@ -43,6 +56,12 @@ header {
             margin: 0;
             padding: 0;
         }
+
+        @include media {
+            width: 35px;
+            height: 35px;
+            left: 10px;
+        }
     }
 }
 
@@ -64,6 +83,9 @@ header {
         height: 100%;
         box-sizing: border-box;
         z-index: 10001;
+        @include media {
+            height: 65px;
+        }
     }
 
     ul {
@@ -78,6 +100,9 @@ header {
         color: #999999;
         margin-top: 340px;
         z-index: 10000;
+        @include media {
+            width: px-to-rem(325);
+        }
 
         &.oneSuggestion {
             margin-top: 100px;
@@ -134,6 +159,11 @@ header {
         width: 25%;
         text-decoration: none;
         transition: all 0.2s ease-out;
+        min-width: 530px;
+        @include media {
+            min-width: auto;
+            width: 70%;
+        }
 
         &::placeholder {
             color: #999999;
@@ -191,9 +221,18 @@ header {
     border-radius: 10px;
     text-align: center;
     min-height: 430px;
+    @include media {
+        width: 100%;
+        height: 100%;
+        padding: 20px 0;
+        margin-top: 90px 0;
+    }
 
     &.activated {
         grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        @include media {
+            margin: 50px auto;
+        }
     }
 
     div {
@@ -209,17 +248,31 @@ header {
         @extend %containerHover;
         @extend %containerActive;
         padding: 25px;
+        @include media {
+            width: 230px;
+            height: 100px;
+            box-sizing: border-box;
+        }
 
         img {
             width: 80px;
             height: 80px;
+            @include media {
+                width: 50px;
+                height: 50px;
+            }
         }
     }
 
     h3 {
         font-size: px-to-rem(20);
         font-weight: 400;
-        margin: auto
+        box-sizing: border-box;
+        margin: auto;
+        @include media {
+            font-family: 14px;
+            font-weight: 300;
+        }
     }
 
     article {
@@ -234,6 +287,10 @@ header {
         margin-bottom: 20px;
         @extend %containerHover;
         @extend %containerActive;
+        @include media {
+            width: 230px;
+            height: 290px;
+        }
 
         i {
             position: absolute;
@@ -289,6 +346,9 @@ header {
     border-right: #000000 solid 3px;
     overflow-y: auto;
     transition: all 0.4s ease;
+    @include media {
+        width: 100%;
+    }
 
     .info__empty {
         margin: auto;
@@ -322,6 +382,34 @@ header {
         img {
             width: 75%;
             height: 75%;
+        }
+
+        &.info__quit {
+            all: unset;
+            display: none;
+            position: absolute;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #df0000;
+            transition: all 0.1s ease;
+            border-left: 1px #000000 solid;
+            border-bottom: 1px #000000 solid;
+            cursor: pointer;
+
+            &:active {
+                background-color: #ce0000;
+                transition: all 0.1s ease;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            @include media {
+                display: flex;
+            }
         }
     }
 
@@ -403,6 +491,9 @@ button {
     cursor: pointer;
     transition: all 0.5s ease;
     z-index: 20000;
+    @include media {
+        display: none;
+    }
 
     &.show {
         left: -30px;

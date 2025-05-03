@@ -216,10 +216,26 @@ header {
   align-items: center;
   z-index: 30000;
 }
+@media screen and (max-width: 46.875rem) {
+  header {
+    height: 86px;
+  }
+}
+@media screen and (max-width: 46.875rem) {
+  header h1 {
+    font-size: 25px;
+  }
+}
 header img {
   width: 50px;
   height: 50px;
   padding-top: 5px;
+}
+@media screen and (max-width: 46.875rem) {
+  header img {
+    height: 40px;
+    width: 40px;
+  }
 }
 header i {
   cursor: pointer;
@@ -239,6 +255,13 @@ header i img {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+@media screen and (max-width: 46.875rem) {
+  header i {
+    width: 35px;
+    height: 35px;
+    left: 10px;
+  }
 }
 
 .search {
@@ -265,6 +288,11 @@ header i img {
   box-sizing: border-box;
   z-index: 10001;
 }
+@media screen and (max-width: 46.875rem) {
+  .search div {
+    height: 65px;
+  }
+}
 .search ul {
   position: absolute;
   list-style: none;
@@ -280,6 +308,11 @@ header i img {
   color: #999999;
   margin-top: 340px;
   z-index: 10000;
+}
+@media screen and (max-width: 46.875rem) {
+  .search ul {
+    width: 20.3125rem;
+  }
 }
 .search ul.oneSuggestion {
   margin-top: 100px;
@@ -331,6 +364,13 @@ header i img {
   width: 25%;
   text-decoration: none;
   transition: all 0.2s ease-out;
+  min-width: 530px;
+}
+@media screen and (max-width: 46.875rem) {
+  .search input {
+    min-width: auto;
+    width: 70%;
+  }
 }
 .search input::-moz-placeholder {
   color: #999999;
@@ -389,8 +429,21 @@ header i img {
   text-align: center;
   min-height: 430px;
 }
+@media screen and (max-width: 46.875rem) {
+  .pokemons {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    margin-top: 90px 0;
+  }
+}
 .pokemons.activated {
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+@media screen and (max-width: 46.875rem) {
+  .pokemons.activated {
+    margin: 50px auto;
+  }
 }
 .pokemons div {
   display: flex;
@@ -407,14 +460,34 @@ header i img {
   margin-bottom: 20px;
   padding: 25px;
 }
+@media screen and (max-width: 46.875rem) {
+  .pokemons div {
+    width: 230px;
+    height: 100px;
+    box-sizing: border-box;
+  }
+}
 .pokemons div img {
   width: 80px;
   height: 80px;
 }
+@media screen and (max-width: 46.875rem) {
+  .pokemons div img {
+    width: 50px;
+    height: 50px;
+  }
+}
 .pokemons h3 {
   font-size: 1.25rem;
   font-weight: 400;
+  box-sizing: border-box;
   margin: auto;
+}
+@media screen and (max-width: 46.875rem) {
+  .pokemons h3 {
+    font-family: 14px;
+    font-weight: 300;
+  }
 }
 .pokemons article {
   display: flex;
@@ -429,6 +502,12 @@ header i img {
   height: 350px;
   transition: all 0.2s ease-out;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 46.875rem) {
+  .pokemons article {
+    width: 230px;
+    height: 290px;
+  }
 }
 .pokemons article i {
   position: absolute;
@@ -481,6 +560,11 @@ header i img {
   overflow-y: auto;
   transition: all 0.4s ease;
 }
+@media screen and (max-width: 46.875rem) {
+  .info {
+    width: 100%;
+  }
+}
 .info .info__empty {
   margin: auto;
   font-weight: 600;
@@ -511,6 +595,32 @@ header i img {
 .info i img {
   width: 75%;
   height: 75%;
+}
+.info i.info__quit {
+  all: unset;
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #df0000;
+  transition: all 0.1s ease;
+  border-left: 1px #000000 solid;
+  border-bottom: 1px #000000 solid;
+  cursor: pointer;
+}
+.info i.info__quit:active {
+  background-color: #ce0000;
+  transition: all 0.1s ease;
+}
+.info i.info__quit img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 46.875rem) {
+  .info i.info__quit {
+    display: flex;
+  }
 }
 .info .info__description {
   grid-row: 4;
@@ -586,6 +696,11 @@ button {
   cursor: pointer;
   transition: all 0.5s ease;
   z-index: 20000;
+}
+@media screen and (max-width: 46.875rem) {
+  button {
+    display: none;
+  }
 }
 button.show {
   left: -30px;
