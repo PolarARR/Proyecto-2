@@ -1,12 +1,12 @@
 @media (hover: hover) {
-  section.teamConstructor article:hover, .pokemons article:hover, .pokemons div:hover, header i:hover {
+  .pokemons article:hover, .pokemons div:hover, header i:hover {
     transform: scale(1.05);
     transition: all 0.2s ease-out;
     cursor: pointer;
   }
 }
 
-section.teamConstructor article:active, .pokemons article:active, .pokemons div:active, header i:active {
+.pokemons article:active, .pokemons div:active, header i:active {
   transform: scale(0.95);
   transition: all 0.1s ease-out;
 }
@@ -728,34 +728,4 @@ button.activated {
 button img {
   width: 100%;
   height: 100%;
-}
-
-section.teamConstructor {
-  box-sizing: border-box;
-  width: 50%;
-  margin: 90px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  background-color: #F5F5F5;
-  gap: 25px;
-  padding: 30px 15px 30px 15px;
-  border: 6px solid #0075BE;
-  border-radius: 10px;
-}
-section.teamConstructor article {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #2b2b2b;
-  width: 13.5rem;
-  height: 13.5rem;
-  margin: 0 auto;
-  border-radius: 20px;
-  transition: all 0.2s ease-out;
-}
-section.teamConstructor article img {
-  width: 80px;
-  height: 80px;
 }/*# sourceMappingURL=main.css.map */
