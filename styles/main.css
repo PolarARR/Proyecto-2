@@ -428,6 +428,7 @@ header i img {
   border-radius: 10px;
   text-align: center;
   min-height: 430px;
+  margin-bottom: 0;
 }
 @media screen and (max-width: 46.875rem) {
   .pokemons {
@@ -465,6 +466,7 @@ header i img {
     width: 230px;
     height: 100px;
     box-sizing: border-box;
+    margin-bottom: 0;
   }
 }
 .pokemons div img {
